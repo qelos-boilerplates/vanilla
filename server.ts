@@ -5,7 +5,7 @@ import './endpoints'
 start({
   manifest: {
     description: 'Description for the entire app',
-    appUrl: process.env.APP_URL || 'https://127.0.0.1:2040'
+    appUrl: process.env.APP_URL || 'https://127.0.0.1:1091'
   },
   config: {
     port: process.env.PORT || '2040',

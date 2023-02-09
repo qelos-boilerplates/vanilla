@@ -1,5 +1,8 @@
 import {defineConfig} from 'vite';
 import mkcert from 'vite-plugin-mkcert'
+import {existsSync} from 'fs';
+
+const serverHasCert = existsSync(fileURLToPath(new URL('../cert/ca.pem', import.meta.url)))
 
 export default defineConfig({
   plugins: [mkcert()],
@@ -11,7 +14,7 @@ export default defineConfig({
     https: true,
     proxy: {
       '/api': {
-        target: 'https://0.0.0.0:1090',
+        target: (serverHasCert ? 'https' : 'http') + '://0.0.0.0:2040',
         secure: false,
       }
     }
