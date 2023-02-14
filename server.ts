@@ -8,7 +8,7 @@ start({
     appUrl: process.env.APP_URL || 'https://127.0.0.1:1091'
   },
   config: {
-    port: process.env.PORT || '2040',
+    port: Number(process.env.PORT || '2040'),
     accessTokenSecret: process.env.ACCESS_TOKEN_SECRET || 'demo-secret',
     refreshTokenSecret: process.env.REFRESH_TOKEN_SECRET || 'refresh-token-secret',
     qelosUrl: process.env.QELOS_URL || 'http://localhost:3000',
