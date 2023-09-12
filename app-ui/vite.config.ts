@@ -1,6 +1,6 @@
 import {defineConfig} from 'vite';
 import mkcert from 'vite-plugin-mkcert'
-import {existsSync} from 'fs';
+import {existsSync} from 'node:fs';
 
 const serverHasCert = existsSync(fileURLToPath(new URL('../cert/ca.pem', import.meta.url)))
 
